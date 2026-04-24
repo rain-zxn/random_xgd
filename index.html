@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ZEC Stake BTC</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="card">
+            <h1>🪙 ZEC Stake BTC</h1>
+            
+            <div class="info-section">
+                <div class="info-item">
+                    <span class="label">Network:</span>
+                    <span class="value" id="network">Not Connected</span>
+                </div>
+                <div class="info-item">
+                    <span class="label">Wallet Address:</span>
+                    <span class="value" id="wallet-address">Not Connected</span>
+                </div>
+                <div class="info-item">
+                    <span class="label">ZEC Balance:</span>
+                    <span class="value" id="zec-balance">0.00</span>
+                </div>
+            </div>
+
+            <div class="amount-section">
+                <div class="amount-display">
+                    <span class="amount-label">Random Sell Amount:</span>
+                    <span class="amount-value" id="random-amount">--</span>
+                    <span class="amount-unit">ZEC</span>
+                </div>
+                <button class="btn btn-secondary" id="generate-amount">🎲 Generate Random Amount</button>
+            </div>
+
+            <div class="button-group">
+                <button class="btn btn-primary" id="connect-wallet">Connect Wallet</button>
+                <button class="btn btn-success" id="sell-button" disabled>💰 Sell Random ZEC</button>
+            </div>
+
+            <div class="status-section" id="status-section" style="display: none;">
+                <div class="status-message" id="status-message"></div>
+            </div>
+
+            <div class="tx-params-section" id="tx-params-section" style="display: none;">
+                <h3>📋 Transaction Parameters</h3>
+                <div class="tx-param-item">
+                    <span class="param-label">Function:</span>
+                    <code class="param-value" id="tx-function">swapExactTokensForTokensSupportingFeeOnTransferTokens</code>
+                </div>
+                <div class="tx-param-item">
+                    <span class="param-label">amountIn:</span>
+                    <code class="param-value" id="tx-amount-in">--</code>
+                </div>
+                <div class="tx-param-item">
+                    <span class="param-label">amountOutMin:</span>
+                    <code class="param-value" id="tx-amount-out-min">--</code>
+                </div>
+                <div class="tx-param-item">
+                    <span class="param-label">path:</span>
+                    <code class="param-value" id="tx-path">--</code>
+                </div>
+                <div class="tx-param-item">
+                    <span class="param-label">to:</span>
+                    <code class="param-value" id="tx-to">--</code>
+                </div>
+                <div class="tx-param-item">
+                    <span class="param-label">deadline:</span>
+                    <code class="param-value" id="tx-deadline">--</code>
+                </div>
+                <div class="tx-param-item">
+                    <span class="param-label">Full Calldata:</span>
+                    <textarea class="param-value-textarea" id="tx-calldata" readonly>--</textarea>
+                </div>
+            </div>
+
+            <div class="contract-info">
+                <h3>Contract Info (Polygon)</h3>
+                <div class="contract-item">
+                    <span>ZEC Token:</span>
+                    <code>0xeB51D9A39AD5EEF215dC0Bf39a8821ff804A0F01</code>
+                </div>
+                <div class="contract-item">
+                    <span>BTC Token:</span>
+                    <code>0x8f3Cf7ad23Cd3CaDbD9735AFf958023239c6A063</code>
+                </div>
+                <div class="contract-item">
+                    <span>QuickSwap Router:</span>
+                    <code>0xa5E0829CaCEd8fFDD4De3c43696c57F7D7A678ff</code>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/ethers@5.7.2/dist/ethers.umd.min.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
